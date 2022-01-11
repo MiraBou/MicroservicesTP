@@ -32,9 +32,6 @@ public class InvoiceServiceImpl implements InvoiceService {
 
     @Override
     public InvoiceResponseDTO save(InvoiceRequestDTO invoiceRequestDTO) {
-        // need to check if customer exists before adding an invoice using CustomerID
-        // ( Intégrité Réferentielle: Invoice/Customer)
-
         Customer customer = null;
         try{
             customer = customerRestClient.getCustomer(invoiceRequestDTO.getCustomerId());
